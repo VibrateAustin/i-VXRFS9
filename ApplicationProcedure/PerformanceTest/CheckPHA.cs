@@ -291,6 +291,5 @@ namespace i_VXRFS.ApplicationProcedure.PerformanceTest
             this.Close();
         }
        
-
     }
 }
