@@ -29,13 +29,46 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtb_detectorK = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtb_rmm = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtb_rdegree = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtb_grating = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtb_brmA = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtb_detetorkV = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtb_brkV = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtb_detector = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtb_crystal = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtb_collimator = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtb_filter = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtb_elemK = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtb_position = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtb_steptime = new System.Windows.Forms.TextBox();
             this.txtb_step = new System.Windows.Forms.TextBox();
             this.cbox_mask = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,41 +83,8 @@
             this.btn_cancle = new System.Windows.Forms.Button();
             this.btn_loadsample = new System.Windows.Forms.Button();
             this.btn_measurement = new System.Windows.Forms.Button();
-            this.txtb_position = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtb_elemK = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtb_filter = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtb_collimator = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtb_crystal = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtb_detector = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtb_detetorkV = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtb_brkV = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtb_brmA = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtb_rdegree = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtb_grating = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtb_rmm = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.btn_download = new System.Windows.Forms.Button();
-            this.txtb_detectorK = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.btn_resolution = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picb_phdresult)).BeginInit();
@@ -137,6 +137,250 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PHA参数";
+            // 
+            // txtb_detectorK
+            // 
+            this.txtb_detectorK.Location = new System.Drawing.Point(803, 23);
+            this.txtb_detectorK.Name = "txtb_detectorK";
+            this.txtb_detectorK.Size = new System.Drawing.Size(65, 21);
+            this.txtb_detectorK.TabIndex = 37;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(720, 26);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 12);
+            this.label29.TabIndex = 36;
+            this.label29.Text = "增益系数K：";
+            // 
+            // txtb_rmm
+            // 
+            this.txtb_rmm.Location = new System.Drawing.Point(932, 23);
+            this.txtb_rmm.Name = "txtb_rmm";
+            this.txtb_rmm.Size = new System.Drawing.Size(42, 21);
+            this.txtb_rmm.TabIndex = 28;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(921, 26);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(17, 12);
+            this.label28.TabIndex = 35;
+            this.label28.Text = "г";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(1051, 26);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(17, 12);
+            this.label24.TabIndex = 33;
+            this.label24.Text = "度";
+            // 
+            // txtb_rdegree
+            // 
+            this.txtb_rdegree.Location = new System.Drawing.Point(1009, 23);
+            this.txtb_rdegree.Name = "txtb_rdegree";
+            this.txtb_rdegree.Size = new System.Drawing.Size(42, 21);
+            this.txtb_rdegree.TabIndex = 32;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(978, 26);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(17, 12);
+            this.label25.TabIndex = 31;
+            this.label25.Text = "mm";
+            // 
+            // txtb_grating
+            // 
+            this.txtb_grating.Location = new System.Drawing.Point(963, 52);
+            this.txtb_grating.Name = "txtb_grating";
+            this.txtb_grating.Size = new System.Drawing.Size(65, 21);
+            this.txtb_grating.TabIndex = 30;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(892, 55);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(65, 12);
+            this.label26.TabIndex = 29;
+            this.label26.Text = "视野光栅：";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(890, 26);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(41, 12);
+            this.label27.TabIndex = 27;
+            this.label27.Text = "光斑：";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(870, 55);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(17, 12);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "kV";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(298, 55);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(17, 12);
+            this.label19.TabIndex = 25;
+            this.label19.Text = "mA";
+            // 
+            // txtb_brmA
+            // 
+            this.txtb_brmA.Location = new System.Drawing.Point(252, 52);
+            this.txtb_brmA.Name = "txtb_brmA";
+            this.txtb_brmA.Size = new System.Drawing.Size(42, 21);
+            this.txtb_brmA.TabIndex = 24;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(229, 55);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(17, 12);
+            this.label18.TabIndex = 23;
+            this.label18.Text = "kV";
+            // 
+            // txtb_detetorkV
+            // 
+            this.txtb_detetorkV.Location = new System.Drawing.Point(803, 52);
+            this.txtb_detetorkV.Name = "txtb_detetorkV";
+            this.txtb_detetorkV.Size = new System.Drawing.Size(65, 21);
+            this.txtb_detetorkV.TabIndex = 22;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(720, 55);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 12);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "探测器高压：";
+            // 
+            // txtb_brkV
+            // 
+            this.txtb_brkV.Location = new System.Drawing.Point(183, 52);
+            this.txtb_brkV.Name = "txtb_brkV";
+            this.txtb_brkV.Size = new System.Drawing.Size(42, 21);
+            this.txtb_brkV.TabIndex = 20;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(148, 55);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(29, 12);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "靶：";
+            // 
+            // txtb_detector
+            // 
+            this.txtb_detector.Location = new System.Drawing.Point(632, 52);
+            this.txtb_detector.Name = "txtb_detector";
+            this.txtb_detector.Size = new System.Drawing.Size(69, 21);
+            this.txtb_detector.TabIndex = 18;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(585, 55);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 12);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "探测器：";
+            // 
+            // txtb_crystal
+            // 
+            this.txtb_crystal.Location = new System.Drawing.Point(632, 23);
+            this.txtb_crystal.Name = "txtb_crystal";
+            this.txtb_crystal.Size = new System.Drawing.Size(69, 21);
+            this.txtb_crystal.TabIndex = 16;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(585, 26);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 12);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "晶体：";
+            // 
+            // txtb_collimator
+            // 
+            this.txtb_collimator.Location = new System.Drawing.Point(503, 52);
+            this.txtb_collimator.Name = "txtb_collimator";
+            this.txtb_collimator.Size = new System.Drawing.Size(69, 21);
+            this.txtb_collimator.TabIndex = 14;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(456, 55);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 12);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "准直器：";
+            // 
+            // txtb_filter
+            // 
+            this.txtb_filter.Location = new System.Drawing.Point(503, 23);
+            this.txtb_filter.Name = "txtb_filter";
+            this.txtb_filter.Size = new System.Drawing.Size(69, 21);
+            this.txtb_filter.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(456, 26);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "滤光片：";
+            // 
+            // txtb_elemK
+            // 
+            this.txtb_elemK.Location = new System.Drawing.Point(381, 52);
+            this.txtb_elemK.Name = "txtb_elemK";
+            this.txtb_elemK.Size = new System.Drawing.Size(69, 21);
+            this.txtb_elemK.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(317, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 12);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "元素谱线：";
+            // 
+            // txtb_position
+            // 
+            this.txtb_position.Location = new System.Drawing.Point(381, 23);
+            this.txtb_position.Name = "txtb_position";
+            this.txtb_position.Size = new System.Drawing.Size(69, 21);
+            this.txtb_position.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(317, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "样品位置：";
             // 
             // label3
             // 
@@ -196,6 +440,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "步长：";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(996, 26);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(17, 12);
+            this.label23.TabIndex = 34;
+            this.label23.Text = "θ";
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -219,6 +472,25 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PHA结果";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(603, 504);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(47, 12);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "label30";
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(550, 504);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(47, 12);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "分辨率:";
             // 
             // label9
             // 
@@ -359,243 +631,7 @@
             this.btn_measurement.TabIndex = 5;
             this.btn_measurement.Text = "测量";
             this.btn_measurement.UseVisualStyleBackColor = true;
-            // 
-            // txtb_position
-            // 
-            this.txtb_position.Location = new System.Drawing.Point(381, 23);
-            this.txtb_position.Name = "txtb_position";
-            this.txtb_position.Size = new System.Drawing.Size(69, 21);
-            this.txtb_position.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(317, 26);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 12);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "样品位置：";
-            // 
-            // txtb_elemK
-            // 
-            this.txtb_elemK.Location = new System.Drawing.Point(381, 52);
-            this.txtb_elemK.Name = "txtb_elemK";
-            this.txtb_elemK.Size = new System.Drawing.Size(69, 21);
-            this.txtb_elemK.TabIndex = 10;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(317, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 12);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "元素谱线：";
-            // 
-            // txtb_filter
-            // 
-            this.txtb_filter.Location = new System.Drawing.Point(503, 23);
-            this.txtb_filter.Name = "txtb_filter";
-            this.txtb_filter.Size = new System.Drawing.Size(69, 21);
-            this.txtb_filter.TabIndex = 12;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(456, 26);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 12);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "滤光片：";
-            // 
-            // txtb_collimator
-            // 
-            this.txtb_collimator.Location = new System.Drawing.Point(503, 52);
-            this.txtb_collimator.Name = "txtb_collimator";
-            this.txtb_collimator.Size = new System.Drawing.Size(69, 21);
-            this.txtb_collimator.TabIndex = 14;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(456, 55);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 12);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "准直器：";
-            // 
-            // txtb_crystal
-            // 
-            this.txtb_crystal.Location = new System.Drawing.Point(632, 23);
-            this.txtb_crystal.Name = "txtb_crystal";
-            this.txtb_crystal.Size = new System.Drawing.Size(69, 21);
-            this.txtb_crystal.TabIndex = 16;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(585, 26);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 12);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "晶体：";
-            // 
-            // txtb_detector
-            // 
-            this.txtb_detector.Location = new System.Drawing.Point(632, 52);
-            this.txtb_detector.Name = "txtb_detector";
-            this.txtb_detector.Size = new System.Drawing.Size(69, 21);
-            this.txtb_detector.TabIndex = 18;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(585, 55);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 12);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "探测器：";
-            // 
-            // txtb_detetorkV
-            // 
-            this.txtb_detetorkV.Location = new System.Drawing.Point(803, 52);
-            this.txtb_detetorkV.Name = "txtb_detetorkV";
-            this.txtb_detetorkV.Size = new System.Drawing.Size(65, 21);
-            this.txtb_detetorkV.TabIndex = 22;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(720, 55);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 12);
-            this.label16.TabIndex = 21;
-            this.label16.Text = "探测器高压：";
-            // 
-            // txtb_brkV
-            // 
-            this.txtb_brkV.Location = new System.Drawing.Point(183, 52);
-            this.txtb_brkV.Name = "txtb_brkV";
-            this.txtb_brkV.Size = new System.Drawing.Size(42, 21);
-            this.txtb_brkV.TabIndex = 20;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(148, 55);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 12);
-            this.label17.TabIndex = 19;
-            this.label17.Text = "靶：";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(229, 55);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 12);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "kV";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(298, 55);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(17, 12);
-            this.label19.TabIndex = 25;
-            this.label19.Text = "mA";
-            // 
-            // txtb_brmA
-            // 
-            this.txtb_brmA.Location = new System.Drawing.Point(252, 52);
-            this.txtb_brmA.Name = "txtb_brmA";
-            this.txtb_brmA.Size = new System.Drawing.Size(42, 21);
-            this.txtb_brmA.TabIndex = 24;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(870, 55);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(17, 12);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "kV";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(996, 26);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(17, 12);
-            this.label23.TabIndex = 34;
-            this.label23.Text = "θ";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(1051, 26);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(17, 12);
-            this.label24.TabIndex = 33;
-            this.label24.Text = "度";
-            // 
-            // txtb_rdegree
-            // 
-            this.txtb_rdegree.Location = new System.Drawing.Point(1009, 23);
-            this.txtb_rdegree.Name = "txtb_rdegree";
-            this.txtb_rdegree.Size = new System.Drawing.Size(42, 21);
-            this.txtb_rdegree.TabIndex = 32;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(978, 26);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(17, 12);
-            this.label25.TabIndex = 31;
-            this.label25.Text = "mm";
-            // 
-            // txtb_grating
-            // 
-            this.txtb_grating.Location = new System.Drawing.Point(963, 52);
-            this.txtb_grating.Name = "txtb_grating";
-            this.txtb_grating.Size = new System.Drawing.Size(65, 21);
-            this.txtb_grating.TabIndex = 30;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(892, 55);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(65, 12);
-            this.label26.TabIndex = 29;
-            this.label26.Text = "视野光栅：";
-            // 
-            // txtb_rmm
-            // 
-            this.txtb_rmm.Location = new System.Drawing.Point(932, 23);
-            this.txtb_rmm.Name = "txtb_rmm";
-            this.txtb_rmm.Size = new System.Drawing.Size(42, 21);
-            this.txtb_rmm.TabIndex = 28;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(890, 26);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(41, 12);
-            this.label27.TabIndex = 27;
-            this.label27.Text = "光斑：";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(921, 26);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(17, 12);
-            this.label28.TabIndex = 35;
-            this.label28.Text = "г";
+            this.btn_measurement.Click += new System.EventHandler(this.btn_measurement_Click);
             // 
             // btn_download
             // 
@@ -607,22 +643,6 @@
             this.btn_download.Text = "卸载";
             this.btn_download.UseVisualStyleBackColor = true;
             // 
-            // txtb_detectorK
-            // 
-            this.txtb_detectorK.Location = new System.Drawing.Point(803, 23);
-            this.txtb_detectorK.Name = "txtb_detectorK";
-            this.txtb_detectorK.Size = new System.Drawing.Size(65, 21);
-            this.txtb_detectorK.TabIndex = 37;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(720, 26);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(71, 12);
-            this.label29.TabIndex = 36;
-            this.label29.Text = "增益系数K：";
-            // 
             // btn_resolution
             // 
             this.btn_resolution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -633,30 +653,11 @@
             this.btn_resolution.Text = "分辨率";
             this.btn_resolution.UseVisualStyleBackColor = true;
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(603, 504);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(47, 12);
-            this.label30.TabIndex = 13;
-            this.label30.Text = "label30";
-            // 
-            // label31
-            // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(550, 504);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(47, 12);
-            this.label31.TabIndex = 12;
-            this.label31.Text = "分辨率:";
-            // 
             // CheckPHA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 712);
+            this.ClientSize = new System.Drawing.Size(1084, 711);
             this.Controls.Add(this.btn_resolution);
             this.Controls.Add(this.btn_download);
             this.Controls.Add(this.btn_measurement);
