@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BB40AE6-5B49-46DA-8ABA-91A3042B222C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>i_VXRFS</RootNamespace>
+    <AssemblyName>i-VXRFS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>D:\XRF\XRFSetup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>splitwj.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationProcedure\AddCompound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\AddCompound.Designer.cs">
+      <DependentUpon>AddCompound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProcedure\DGVPrinter.cs" />
+    <Compile Include="ApplicationProcedure\DgvTableReact.cs" />
+    <Compile Include="ApplicationProcedure\ExcelHelper.cs" />
+    <Compile Include="ApplicationProcedure\OpenFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\OpenFile.Designer.cs">
+      <DependentUpon>OpenFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProcedure\SQLiteHelper.cs" />
+    <Compile Include="ApplicationProcedure\StandardSampleLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\StandardSampleLibrary.Designer.cs">
+      <DependentUpon>StandardSampleLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProcedure\SysConfig_FileSave.cs" />
+    <Compile Include="ApplicationProcedure\SystemCompound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\SystemCompound.Designer.cs">
+      <DependentUpon>SystemCompound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\AddDriftSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\AddDriftSample.Designer.cs">
+      <DependentUpon>AddDriftSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\AddDriftCompound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\AddDriftCompound.Designer.cs">
+      <DependentUpon>AddDriftCompound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\changeDriftApplicationName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\changeDriftApplicationName.Designer.cs">
+      <DependentUpon>changeDriftApplicationName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\driftSave.cs" />
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\OpenCreatedQuantitationAnalysisApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\OpenCreatedQuantitationAnalysisApplication.Designer.cs">
+      <DependentUpon>OpenCreatedQuantitationAnalysisApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\CheckEDXRF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\CheckEDXRF.Designer.cs">
+      <DependentUpon>CheckEDXRF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\CheckWDXRF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\CheckWDXRF.Designer.cs">
+      <DependentUpon>CheckWDXRF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisSpectralLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisSpectralLine.Designer.cs">
+      <DependentUpon>CheckQualitationAnalysisSpectralLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\ContrastSpectraLine_QualitationResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\ContrastSpectraLine_QualitationResults.Designer.cs">
+      <DependentUpon>ContrastSpectraLine_QualitationResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\Class_QualitationSpectraLine.cs" />
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\AddCompound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\AddCompound.Designer.cs">
+      <DependentUpon>AddCompound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\AddCompound_qualitation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\AddCompound_qualitation.Designer.cs">
+      <DependentUpon>AddCompound_qualitation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\CheckAngle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\CheckAngle.Designer.cs">
+      <DependentUpon>CheckAngle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\CheckPHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\CheckPHD.Designer.cs">
+      <DependentUpon>CheckPHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DGVPrinter.cs" />
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\ExcelHelper.cs" />
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\OpenFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\OpenFile.Designer.cs">
+      <DependentUpon>OpenFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\SaveFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\SaveFile.Designer.cs">
+      <DependentUpon>SaveFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\SQLiteHelper.cs" />
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Standardsample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Standardsample.Designer.cs">
+      <DependentUpon>Standardsample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCI_CAN.cs" />
+    <Compile Include="ApplicationProcedure\PerformanceTest\CheckAngle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\CheckAngle.Designer.cs">
+      <DependentUpon>CheckAngle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\CheckPHA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\CheckPHA.Designer.cs">
+      <DependentUpon>CheckPHA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\PerformanceTest_mainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationProcedure\PerformanceTest\PerformanceTest_mainPage.Designer.cs">
+      <DependentUpon>PerformanceTest_mainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QuantitationAnalysisResults\InputCompound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QuantitationAnalysisResults\InputCompound.Designer.cs">
+      <DependentUpon>InputCompound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QuantitationAnalysisResults\ChoiceQuantitationAnalysisResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QuantitationAnalysisResults\ChoiceQuantitationAnalysisResults.Designer.cs">
+      <DependentUpon>ChoiceQuantitationAnalysisResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QuantitationAnalysisResults\EditAnalysisResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QuantitationAnalysisResults\EditAnalysisResults.Designer.cs">
+      <DependentUpon>EditAnalysisResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QuantitationAnalysisResults\QuantitationAnalysisResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QuantitationAnalysisResults\QuantitationAnalysisResults.Designer.cs">
+      <DependentUpon>QuantitationAnalysisResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\AddCorrectionFactor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\AddCorrectionFactor.Designer.cs">
+      <DependentUpon>AddCorrectionFactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\changeApplicationName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\changeApplicationName.Designer.cs">
+      <DependentUpon>changeApplicationName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\CreateDriftCorrectionApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\CreateDriftCorrectionApplication.Designer.cs">
+      <DependentUpon>CreateDriftCorrectionApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\copyDriftcorrectionapplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\copyDriftcorrectionapplication.Designer.cs">
+      <DependentUpon>copyDriftcorrectionapplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\copyquantitationanalysisapplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\copyquantitationanalysisapplication.Designer.cs">
+      <DependentUpon>copyquantitationanalysisapplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\createnewquantitativeanalysis_application.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\createnewquantitativeanalysis_application.Designer.cs">
+      <DependentUpon>createnewquantitativeanalysis_application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\DeleteDriftCorrectionApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\DeleteDriftCorrectionApplication.Designer.cs">
+      <DependentUpon>DeleteDriftCorrectionApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DeleteQuantitationAnalysisApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DeleteQuantitationAnalysisApplication.Designer.cs">
+      <DependentUpon>DeleteQuantitationAnalysisApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\DriftCorrectionApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\DriftCorrectionApplication.Designer.cs">
+      <DependentUpon>DriftCorrectionApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\OpenQuantitationRevisionAnalysisApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\OpenQuantitationRevisionAnalysisApplication.Designer.cs">
+      <DependentUpon>OpenQuantitationRevisionAnalysisApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\RegressionLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\RegressionLine.Designer.cs">
+      <DependentUpon>RegressionLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\ShowAllData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\ShowAllData.Designer.cs">
+      <DependentUpon>ShowAllData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfiguration\edxrf_sysconfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfiguration\edxrf_sysconfiguration.Designer.cs">
+      <DependentUpon>edxrf_sysconfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="i-VXRFS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i-VXRFS.Designer.cs">
+      <DependentUpon>i-VXRFS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="i_VXRFS_function.cs" />
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\LimitDetection_RevisionQuantitation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\LimitDetection_RevisionQuantitation.Designer.cs">
+      <DependentUpon>LimitDetection_RevisionQuantitation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\QuantitativeMeas\MeasurementForm_NonStd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\QuantitativeMeas\MeasurementForm_NonStd.Designer.cs">
+      <DependentUpon>MeasurementForm_NonStd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\QuantitativeMeas\MeasurementForm_Std.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\QuantitativeMeas\MeasurementForm_Std.Designer.cs">
+      <DependentUpon>MeasurementForm_Std.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\QuantitativeMeas\MeasurementSample_QuantitationAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\QuantitativeMeas\MeasurementSample_QuantitationAnalysis.Designer.cs">
+      <DependentUpon>MeasurementSample_QuantitationAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfiguration\microanalysis_sysconfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfiguration\microanalysis_sysconfiguration.Designer.cs">
+      <DependentUpon>microanalysis_sysconfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\newquantitationanalysisapplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\newquantitationanalysisapplication.Designer.cs">
+      <DependentUpon>newquantitationanalysisapplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\OpenDriftCorrectionApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\OpenDriftCorrectionApplication.Designer.cs">
+      <DependentUpon>OpenDriftCorrectionApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\OpenQuantitationAnalysisApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\OpenQuantitationAnalysisApplication.Designer.cs">
+      <DependentUpon>OpenQuantitationAnalysisApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\QualitationAnalysisResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\QualitationAnalysisResult.Designer.cs">
+      <DependentUpon>QualitationAnalysisResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\MathHelper.cs" />
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\Revision_QuantitationAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\Revision_QuantitationAnalysis.Designer.cs">
+      <DependentUpon>Revision_QuantitationAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\TheoreticalCoefficient_RevisionQuantitation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\TheoreticalCoefficient_RevisionQuantitation.Designer.cs">
+      <DependentUpon>TheoreticalCoefficient_RevisionQuantitation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfiguration\wdxrf_sysconfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfiguration\wdxrf_sysconfiguration.Designer.cs">
+      <DependentUpon>wdxrf_sysconfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\QuantitationAnalysisApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAndOpenQuantitationAnalysisApplication\QuantitationAnalysisApplication.Designer.cs">
+      <DependentUpon>QuantitationAnalysisApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ShowSpectroState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\ShowSpectroState.Designer.cs">
+      <DependentUpon>ShowSpectroState.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ApplicationProcedure\AddCompound.resx">
+      <DependentUpon>AddCompound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProcedure\OpenFile.resx">
+      <DependentUpon>OpenFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProcedure\StandardSampleLibrary.resx">
+      <DependentUpon>StandardSampleLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProcedure\SystemCompound.resx">
+      <DependentUpon>SystemCompound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\AddDriftSample.resx">
+      <DependentUpon>AddDriftSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\AddDriftCompound.resx">
+      <DependentUpon>AddDriftCompound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\changeDriftApplicationName.resx">
+      <DependentUpon>changeDriftApplicationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\OpenCreatedQuantitationAnalysisApplication.resx">
+      <DependentUpon>OpenCreatedQuantitationAnalysisApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProcedure\PerformanceTest\CheckEDXRF.resx">
+      <DependentUpon>CheckEDXRF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProcedure\PerformanceTest\CheckWDXRF.resx">
+      <DependentUpon>CheckWDXRF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisSpectralLine.resx">
+      <DependentUpon>CheckQualitationAnalysisSpectralLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultDataAnalysis\QualitationAnalysisResults\ContrastSpectraLine_QualitationResults.resx">
+      <DependentUpon>ContrastSpectraLine_QualitationResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\AddCompound.resx">
+      <DependentUpon>AddCompound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\AddCompound_qualitation.resx">
+      <DependentUpon>AddCompound_qualitation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\CheckAngle.resx">
+      <DependentUpon>CheckAngle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\CheckPHD.resx">
+      <DependentUpon>CheckPHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\OpenFile.resx">
+      <DependentUpon>OpenFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\SaveFile.resx">
+      <DependentUpon>SaveFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\Standardsample.resx">
+      <DependentUpon>Standardsample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProcedure\PerformanceTest\CheckAngle.resx">
+      <DependentUpon>CheckAngle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProcedure\PerformanceTest\CheckPHA.resx">
+      <DependentUpon>CheckPHA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProcedure\PerformanceTest\PerformanceTest_mainPage.resx">
+      <DependentUpon>PerformanceTest_mainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultDataAnalysis\QuantitationAnalysisResults\InputCompound.resx">
+      <DependentUpon>InputCompound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultDataAnalysis\QuantitationAnalysisResults\ChoiceQuantitationAnalysisResults.resx">
+      <DependentUpon>ChoiceQuantitationAnalysisResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultDataAnalysis\QuantitationAnalysisResults\EditAnalysisResults.resx">
+      <DependentUpon>EditAnalysisResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultDataAnalysis\QuantitationAnalysisResults\QuantitationAnalysisResults.resx">
+      <DependentUpon>QuantitationAnalysisResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\AddCorrectionFactor.resx">
+      <DependentUpon>AddCorrectionFactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\changeApplicationName.resx">
+      <DependentUpon>changeApplicationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\CreateDriftCorrectionApplication.resx">
+      <DependentUpon>CreateDriftCorrectionApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\copyDriftcorrectionapplication.resx">
+      <DependentUpon>copyDriftcorrectionapplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\copyquantitationanalysisapplication.resx">
+      <DependentUpon>copyquantitationanalysisapplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\createnewquantitativeanalysis_application.resx">
+      <DependentUpon>createnewquantitativeanalysis_application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\DeleteDriftCorrectionApplication.resx">
+      <DependentUpon>DeleteDriftCorrectionApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DeleteQuantitationAnalysisApplication.resx">
+      <DependentUpon>DeleteQuantitationAnalysisApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\DriftCorrectionApplication.resx">
+      <DependentUpon>DriftCorrectionApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\OpenQuantitationRevisionAnalysisApplication.resx">
+      <DependentUpon>OpenQuantitationRevisionAnalysisApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\RegressionLine.resx">
+      <DependentUpon>RegressionLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\ShowAllData.resx">
+      <DependentUpon>ShowAllData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfiguration\edxrf_sysconfiguration.resx">
+      <DependentUpon>edxrf_sysconfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i-VXRFS.resx">
+      <DependentUpon>i-VXRFS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\LimitDetection_RevisionQuantitation.resx">
+      <DependentUpon>LimitDetection_RevisionQuantitation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\QuantitativeMeas\MeasurementForm_NonStd.resx">
+      <DependentUpon>MeasurementForm_NonStd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\QuantitativeMeas\MeasurementForm_Std.resx">
+      <DependentUpon>MeasurementForm_Std.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\QuantitativeMeas\MeasurementSample_QuantitationAnalysis.resx">
+      <DependentUpon>MeasurementSample_QuantitationAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfiguration\microanalysis_sysconfiguration.resx">
+      <DependentUpon>microanalysis_sysconfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\newquantitationanalysisapplication.resx">
+      <DependentUpon>newquantitationanalysisapplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\OpenDriftCorrectionApplication.resx">
+      <DependentUpon>OpenDriftCorrectionApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\OpenQuantitationAnalysisApplication.resx">
+      <DependentUpon>OpenQuantitationAnalysisApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ResultDataAnalysis\QualitationAnalysisResults\QualitationAnalysisResult.resx">
+      <DependentUpon>QualitationAnalysisResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\Revision_QuantitationAnalysis.resx">
+      <DependentUpon>Revision_QuantitationAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\Regression_Quantitation\TheoreticalCoefficient_RevisionQuantitation.resx">
+      <DependentUpon>TheoreticalCoefficient_RevisionQuantitation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfiguration\wdxrf_sysconfiguration.resx">
+      <DependentUpon>wdxrf_sysconfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAndOpenQuantitationAnalysisApplication\QuantitationAnalysisApplication.resx">
+      <DependentUpon>QuantitationAnalysisApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\ShowSpectroState.resx">
+      <DependentUpon>ShowSpectroState.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="splitwj.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
