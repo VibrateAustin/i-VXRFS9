@@ -156,6 +156,12 @@
     <Compile Include="ApplicationProcedure\PerformanceTest\CheckWDXRF.Designer.cs">
       <DependentUpon>CheckWDXRF.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisPeak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisPeak.Designer.cs">
+      <DependentUpon>CheckQualitationAnalysisPeak.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisSpectralLine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationProcedure\PerformanceTest\CheckWDXRF.resx">
       <DependentUpon>CheckWDXRF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisPeak.resx">
+      <DependentUpon>CheckQualitationAnalysisPeak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisSpectralLine.resx">
       <DependentUpon>CheckQualitationAnalysisSpectralLine.cs</DependentUpon>

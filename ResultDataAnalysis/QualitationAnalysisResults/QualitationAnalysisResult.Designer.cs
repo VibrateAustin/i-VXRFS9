@@ -260,6 +260,7 @@
             this.btn_checkpeak.TabIndex = 5;
             this.btn_checkpeak.Text = "查看峰";
             this.btn_checkpeak.UseVisualStyleBackColor = true;
+            this.btn_checkpeak.Click += new System.EventHandler(this.btn_checkpeak_Click);
             // 
             // btn_rank
             // 
@@ -312,7 +313,7 @@
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
-            // QualitationAnalysisResults
+            // QualitationAnalysisResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -328,7 +329,7 @@
             this.Controls.Add(this.gbox_conditionparameter);
             this.Controls.Add(this.cbox_qualitationanalysisname);
             this.Controls.Add(this.label1);
-            this.Name = "QualitationAnalysisResults";
+            this.Name = "QualitationAnalysisResult";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "定性分析结果";
             this.Load += new System.EventHandler(this.QualitationAnalysisResults_Load);

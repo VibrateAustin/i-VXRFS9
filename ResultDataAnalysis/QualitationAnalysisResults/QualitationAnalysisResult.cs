@@ -196,6 +196,223 @@ namespace i_VXRFS.ResultDataAnalysis.QualitationAnalysisResults
             }
         }
 
-        
+        private void btn_checkpeak_Click(object sender, EventArgs e)
+        {
+            if (dgv_qualitationanalysisresults.SelectedRows.Count == 1)
+            {
+                //获得所选样品的信息
+                List<string> sampleinfoQ = new List<string> { };
+                sampleinfoQ = XRF_function.GetDgvRowData(dgv_qualitationanalysisresults);//获取选中行的数据信息，并传送到下一窗口
+
+                CheckQualitationAnalysisPeak checkPeak = new CheckQualitationAnalysisPeak();
+                checkPeak.SampleInfo = sampleinfoQ;
+                checkPeak.Show();
+            }
+            else
+            {
+                MessageBox.Show("请选择需要查看的样品！");
+            }
+
+        }
+
+        public class Sample
+        {
+            private string test_program;
+            private string sample_name;
+            private DirectoryInfo sample_directory;
+            //构造函数
+            public Sample(string name, string program)
+            {
+                sample_name = name;
+                test_program = program;
+                sample_directory = new DirectoryInfo(Public_Path.QualitationApplicationPath + "\\" + program + "\\" + name);
+            }
+            //属性1：样品名称
+            public string SampleName
+            {
+                get { return sample_name; }
+            }
+            //属性2：用来测试样品的程序
+            public string TestProgram
+            {
+                get { return test_program; }
+            }
+            //属性3：测试结果所存放的文件夹
+            public DirectoryInfo SampleDirectory
+            {
+                get { return sample_directory; }
+            }
+
+            //方法1：获取峰强数据
+            //private Dictionary<int, List<List<string>>> GetIntensityData()
+            //{
+            //    Dictionary<int, List<List<string>>> IntensityData = null;
+            //    for (int i = 0; i < 11; i++)
+            //    {
+            //        List<List<string>> intensity_list = null;
+            //        string[] intensity_str = File.ReadAllLines(sample_directory.FullName + "\\" + i);
+            //        for (int j = 0; j < intensity_str.Length - 1; j++)
+            //        {
+            //            string[] intensity_row = intensity_str[j + 1].Split('\t');
+            //            for (int k = 0; k < 10; k++)
+            //            {
+            //                intensity_list[j][k] = intensity_row[k];
+            //            }
+            //        }
+            //        IntensityData.Add(i, intensity_list);
+            //    }
+            //    return IntensityData;
+            //}
+            //方法1：获取峰强数据
+            public Dictionary<int,List<string>> GetIntensity()
+            {
+                Dictionary<int, List<string>> intensity = new Dictionary<int, List<string>>();
+                char[] charSeparators = new char[] { ',', '\t', '\n', '\r' };
+                for (int i=0;i<11;i++)
+                {
+                    List<string> points = new List<string>();
+                    string[] points_str = File.ReadAllLines(sample_directory.FullName + "\\" + i);
+                    for (int j=1;j<points_str.Length;j++)
+                    {
+                        string[] rowdata = points_str[j].Split(charSeparators, StringSplitOptions.RemoveEmptyEntries);
+                        points.AddRange(rowdata);
+                    }
+                    intensity.Add(i + 1, points);
+                }
+                return intensity;
+            }
+            //方法2：获取峰位数据
+            //private Dictionary<int, Dictionary<int, List<string>>> GetSiteData()
+            //{
+            //    Dictionary<int, Dictionary<int, List<string>>> SiteData = null;
+            //    for (int i = 0; i < 11; i++)
+            //    {
+            //        Dictionary<int, List<string>> site_data = null;
+            //        string[] site_str = File.ReadAllLines(sample_directory.FullName + "\\peak\\" + i);
+            //        for (int j = 0; j < site_str.Length; j++)
+            //        {
+            //            string[] site = site_str[j + 1].Split('\t');
+            //            List<string> site_ = null;
+            //            for (int k = 0; k < site.Length; k++)
+            //            {
+            //                site_[k] = site[k];
+            //            }
+            //            site_data.Add(j + 1, site_);
+            //        }
+            //        SiteData.Add(i + 1, site_data);
+            //    }
+            //    return SiteData;
+            //}
+            //方法2：获取峰位数据
+            public Dictionary<int, List<PeakSite>> GetSite()
+            {
+                Dictionary<int, List<PeakSite>> site = new Dictionary<int, List<PeakSite>>();
+                char[] charSeparators = new char[] { ',', '\t', '\n', '\r' };
+                for (int i=0;i<11;i++)
+                {
+                    List<PeakSite> peaks = new List<PeakSite>();  //每一个区段的峰位数据
+                    string[] peaks_str = File.ReadAllLines(sample_directory.FullName + "\\peak\\" + i);
+                    for (int j=0;j<peaks_str.Length;j++)
+                    {
+                        string[] peak = peaks_str[j + 1].Split(charSeparators, StringSplitOptions.RemoveEmptyEntries);
+                        peaks.Add(new PeakSite(peak));
+                    }
+                    site.Add(i + 1, peaks);
+                }
+                return site;
+            }
+            //方法3：获取参数数据
+            private Dictionary<int, List<string>> GetParameterData()
+            {
+                Dictionary<int, List<string>> ParameterData = null;
+                string[] parameters = File.ReadAllLines(sample_directory.FullName + "\\" + sample_name);
+                for (int i = 0; i < parameters.Length - 1; i++)
+                {
+                    List<string> parameters_list = null;
+                    string[] parameters_str = null;
+                    for (int j = 0; j < 10; j++)
+                    {
+                        parameters_list[j] = parameters_str[j];
+                    }
+                    ParameterData.Add(i + 1, parameters_list);
+                }
+                return ParameterData;
+            }
+            //方法4：获取所有数据点
+            private List<List<string>> GetAllPoint()
+            {
+                List<List<string>> AllPoint = null;
+                return AllPoint;
+            }
+        }
+    }
+
+    public struct PeakSite
+    {
+        //构造函数1:使用从txt文件中读取的字符串初始化
+        public PeakSite(string[] peak)
+        {
+            if (peak.Length<7)
+            {
+                this.Energy = 0;
+                this.TwoTheta = 0;
+                this.Width = 0;
+                this.Intensity = 0;
+                this.Background = 0;
+                this.SNR = 0;
+                this.Match = null;
+                return;
+            }
+            this.Energy = Convert.ToDouble(peak[0]);
+            this.TwoTheta = Convert.ToDouble(peak[1]);
+            this.Width = Convert.ToDouble(peak[2]);
+            this.Intensity = Convert.ToDouble(peak[3]);
+            this.Background = Convert.ToDouble(peak[4]);
+            this.SNR = Convert.ToDouble(peak[5]);
+            this.Match = null;
+            Array.Copy(peak, 6, Match, 0, 0);
+        }
+        //属性1：峰所在位置的能量
+        public double Energy
+        {
+            get;
+            set;
+        }
+        //属性2：峰所在位置的2theta角
+        public double TwoTheta
+        {
+            get;
+            set;
+        }
+        //属性3：峰宽
+        public double Width
+        {
+            get;
+            set;
+        }
+        //属性4：峰强
+        public double Intensity
+        {
+            get;
+            set;
+        }
+        //属性5：背景峰强
+        public double Background
+        {
+            get;
+            set;
+        }
+        //属性6：信噪比
+        public double SNR
+        {
+            get;
+            set;
+        }
+        //属性7：匹配出的峰名称
+        public string[] Match
+        {
+            get;
+            set;
+        }
     }
 }
