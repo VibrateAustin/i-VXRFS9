@@ -58,5 +58,39 @@ namespace i_VXRFS.NewAndOpenQuantitationAnalysisApplication.Regression_Quantitat
             float x = (b2 - b1) / (k1 - k2);
             return new PointF(x, k1 * x + b1);
         }
+
+        //求直线与矩形的交点
+        public static void GetEndPoint(Rectangle rec, PointF f, ref List<PointF> crosses)
+        {
+            crosses.Add(new PointF(rec.X, rec.X * f.X + f.Y));
+            crosses.Add(new PointF((rec.Y - f.Y) / f.X, rec.Y));
+            crosses.Add(new PointF(rec.X + rec.Width, (rec.X + rec.Width) * f.X + f.Y));
+            crosses.Add(new PointF((rec.Y + rec.Height - f.Y) / f.X, rec.Y + rec.Height));
+            List<PointF> wrong = new List<PointF>();
+            foreach (PointF p in crosses)
+            {
+                if (p.X < rec.X || p.Y < rec.Y || p.X > rec.X + rec.Width || p.Y > rec.Y + rec.Height)
+                {
+                    wrong.Add(p);
+                }
+            }
+            foreach (PointF p in wrong)
+            {
+                crosses.Remove(p);
+            }
+            if (crosses.Count == 2)
+            {
+                if (crosses[0].X > crosses[1].X)
+                {
+                    PointF t = crosses[0];
+                    crosses[0] = crosses[1];
+                    crosses[1] = t;
+                }
+            }
+            else
+            {
+                crosses = null;
+            }
+        }
     }
 }

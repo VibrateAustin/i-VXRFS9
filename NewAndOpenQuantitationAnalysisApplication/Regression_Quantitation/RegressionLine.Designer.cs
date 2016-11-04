@@ -65,6 +65,8 @@
             this.lab_equation = new System.Windows.Forms.Label();
             this.lab_equation2 = new System.Windows.Forms.Label();
             this.lab_equation3 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.curveBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,12 +74,16 @@
             // 
             this.curveBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.curveBox.Location = new System.Drawing.Point(19, 156);
-            this.curveBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curveBox.Margin = new System.Windows.Forms.Padding(2);
             this.curveBox.Name = "curveBox";
             this.curveBox.Size = new System.Drawing.Size(1064, 386);
             this.curveBox.TabIndex = 0;
             this.curveBox.TabStop = false;
             this.curveBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.curveBox_MouseClick);
+            this.curveBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.curveBox_MouseDown);
+            this.curveBox.MouseLeave += new System.EventHandler(this.curveBox_MouseLeave);
+            this.curveBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.curveBox_MouseMove);
+            this.curveBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.curveBox_MouseUp);
             // 
             // label1
             // 
@@ -172,7 +178,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(302, 46);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(76, 21);
@@ -181,7 +187,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(461, 43);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(76, 21);
@@ -190,7 +196,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(302, 23);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(76, 21);
@@ -199,7 +205,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(78, 23);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(76, 21);
@@ -208,7 +214,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(129, 46);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(76, 21);
@@ -218,7 +224,7 @@
             // 
             this.isShowRMS.AutoSize = true;
             this.isShowRMS.Location = new System.Drawing.Point(32, 84);
-            this.isShowRMS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.isShowRMS.Margin = new System.Windows.Forms.Padding(2);
             this.isShowRMS.Name = "isShowRMS";
             this.isShowRMS.Size = new System.Drawing.Size(96, 16);
             this.isShowRMS.TabIndex = 18;
@@ -230,7 +236,7 @@
             // 
             this.isShowReg.AutoSize = true;
             this.isShowReg.Location = new System.Drawing.Point(148, 106);
-            this.isShowReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.isShowReg.Margin = new System.Windows.Forms.Padding(2);
             this.isShowReg.Name = "isShowReg";
             this.isShowReg.Size = new System.Drawing.Size(84, 16);
             this.isShowReg.TabIndex = 19;
@@ -242,7 +248,7 @@
             // 
             this.isShowDEF.AutoSize = true;
             this.isShowDEF.Location = new System.Drawing.Point(32, 106);
-            this.isShowDEF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.isShowDEF.Margin = new System.Windows.Forms.Padding(2);
             this.isShowDEF.Name = "isShowDEF";
             this.isShowDEF.Size = new System.Drawing.Size(78, 16);
             this.isShowDEF.TabIndex = 20;
@@ -254,7 +260,7 @@
             // 
             this.isShowExp.AutoSize = true;
             this.isShowExp.Location = new System.Drawing.Point(148, 84);
-            this.isShowExp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.isShowExp.Margin = new System.Windows.Forms.Padding(2);
             this.isShowExp.Name = "isShowExp";
             this.isShowExp.Size = new System.Drawing.Size(96, 16);
             this.isShowExp.TabIndex = 21;
@@ -266,7 +272,7 @@
             // 
             this.isInterval.AutoSize = true;
             this.isInterval.Location = new System.Drawing.Point(260, 84);
-            this.isInterval.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.isInterval.Margin = new System.Windows.Forms.Padding(2);
             this.isInterval.Name = "isInterval";
             this.isInterval.Size = new System.Drawing.Size(72, 16);
             this.isInterval.TabIndex = 22;
@@ -278,7 +284,7 @@
             // 
             this.intervalBox2.Enabled = false;
             this.intervalBox2.Location = new System.Drawing.Point(376, 104);
-            this.intervalBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intervalBox2.Margin = new System.Windows.Forms.Padding(2);
             this.intervalBox2.Name = "intervalBox2";
             this.intervalBox2.Size = new System.Drawing.Size(76, 21);
             this.intervalBox2.TabIndex = 23;
@@ -287,7 +293,7 @@
             // 
             this.intervalBox1.Enabled = false;
             this.intervalBox1.Location = new System.Drawing.Point(296, 104);
-            this.intervalBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intervalBox1.Margin = new System.Windows.Forms.Padding(2);
             this.intervalBox1.Name = "intervalBox1";
             this.intervalBox1.Size = new System.Drawing.Size(76, 21);
             this.intervalBox1.TabIndex = 24;
@@ -296,7 +302,7 @@
             // 
             this.intervalButton.Enabled = false;
             this.intervalButton.Location = new System.Drawing.Point(471, 104);
-            this.intervalButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intervalButton.Margin = new System.Windows.Forms.Padding(2);
             this.intervalButton.Name = "intervalButton";
             this.intervalButton.Size = new System.Drawing.Size(44, 18);
             this.intervalButton.TabIndex = 25;
@@ -365,7 +371,7 @@
             // preButton
             // 
             this.preButton.Location = new System.Drawing.Point(622, 45);
-            this.preButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.preButton.Margin = new System.Windows.Forms.Padding(2);
             this.preButton.Name = "preButton";
             this.preButton.Size = new System.Drawing.Size(40, 18);
             this.preButton.TabIndex = 35;
@@ -376,7 +382,7 @@
             // nextButton
             // 
             this.nextButton.Location = new System.Drawing.Point(667, 45);
-            this.nextButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nextButton.Margin = new System.Windows.Forms.Padding(2);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(39, 18);
             this.nextButton.TabIndex = 36;
@@ -387,7 +393,7 @@
             // calcButton
             // 
             this.calcButton.Location = new System.Drawing.Point(622, 102);
-            this.calcButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calcButton.Margin = new System.Windows.Forms.Padding(2);
             this.calcButton.Name = "calcButton";
             this.calcButton.Size = new System.Drawing.Size(40, 23);
             this.calcButton.TabIndex = 37;
@@ -398,7 +404,7 @@
             // showButton
             // 
             this.showButton.Location = new System.Drawing.Point(665, 102);
-            this.showButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.showButton.Margin = new System.Windows.Forms.Padding(2);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(40, 23);
             this.showButton.TabIndex = 38;
@@ -421,37 +427,54 @@
             // 
             this.lab_equation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lab_equation.AutoSize = true;
-            this.lab_equation.Location = new System.Drawing.Point(40, 559);
+            this.lab_equation.Location = new System.Drawing.Point(63, 561);
             this.lab_equation.Name = "lab_equation";
-            this.lab_equation.Size = new System.Drawing.Size(47, 12);
+            this.lab_equation.Size = new System.Drawing.Size(0, 12);
             this.lab_equation.TabIndex = 40;
-            this.lab_equation.Text = "label14";
             // 
             // lab_equation2
             // 
             this.lab_equation2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lab_equation2.AutoSize = true;
-            this.lab_equation2.Location = new System.Drawing.Point(40, 582);
+            this.lab_equation2.Location = new System.Drawing.Point(63, 585);
             this.lab_equation2.Name = "lab_equation2";
-            this.lab_equation2.Size = new System.Drawing.Size(47, 12);
+            this.lab_equation2.Size = new System.Drawing.Size(0, 12);
             this.lab_equation2.TabIndex = 41;
-            this.lab_equation2.Text = "label14";
             // 
             // lab_equation3
             // 
             this.lab_equation3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lab_equation3.AutoSize = true;
-            this.lab_equation3.Location = new System.Drawing.Point(40, 607);
+            this.lab_equation3.Location = new System.Drawing.Point(63, 609);
             this.lab_equation3.Name = "lab_equation3";
-            this.lab_equation3.Size = new System.Drawing.Size(47, 12);
+            this.lab_equation3.Size = new System.Drawing.Size(0, 12);
             this.lab_equation3.TabIndex = 42;
-            this.lab_equation3.Text = "label14";
             // 
-            // Regression
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(26, 546);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(11, 12);
+            this.label15.TabIndex = 43;
+            this.label15.Text = "0";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(469, 561);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 12);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "label14";
+            // 
+            // RegressionLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 630);
+            this.ClientSize = new System.Drawing.Size(1111, 630);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.lab_equation3);
             this.Controls.Add(this.lab_equation2);
             this.Controls.Add(this.lab_equation);
@@ -490,8 +513,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.curveBox);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Regression";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "RegressionLine";
             this.Text = " 回归";
             this.Load += new System.EventHandler(this.Regression_Load);
             ((System.ComponentModel.ISupportInitialize)(this.curveBox)).EndInit();
@@ -539,5 +562,7 @@
         private System.Windows.Forms.Label lab_equation;
         private System.Windows.Forms.Label lab_equation2;
         private System.Windows.Forms.Label lab_equation3;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
