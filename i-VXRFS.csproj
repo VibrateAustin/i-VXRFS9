@@ -119,6 +119,7 @@
     <Compile Include="ApplicationProcedure\SystemCompound.Designer.cs">
       <DependentUpon>SystemCompound.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\AddDriftSample.cs">
       <SubType>Form</SubType>
     </Compile>

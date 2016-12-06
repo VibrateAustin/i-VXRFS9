@@ -431,7 +431,13 @@ namespace i_VXRFS.ApplicationProcedure.PerformanceTest
             SysConfig_FileSave.ListToSaveTxt(SysData, path);
             this.Close();
         }
-        
+
+        private void btn_measurement_Click(object sender, EventArgs e)
+        {
+            //测角仪到达指定位置
+
+        }
+
         //建立更新数据表一行的方法
         //i_VXRFS_function XRF_function=new i_VXRFS_function();
         //public int sqlData(string str){

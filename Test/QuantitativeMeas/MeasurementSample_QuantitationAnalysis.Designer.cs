@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_testplatform = new System.Windows.Forms.TabPage();
             this.gbox_testplatform = new System.Windows.Forms.GroupBox();
@@ -229,14 +229,14 @@
             // 
             this.dgv_measurementsamplelist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_measurementsamplelist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_measurementsamplelist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_measurementsamplelist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_measurementsamplelist.Location = new System.Drawing.Point(6, 39);
             this.dgv_measurementsamplelist.Name = "dgv_measurementsamplelist";
@@ -285,6 +285,7 @@
             this.btn_deleteonelist.TabIndex = 10;
             this.btn_deleteonelist.Text = "删          除";
             this.btn_deleteonelist.UseVisualStyleBackColor = true;
+            this.btn_deleteonelist.Click += new System.EventHandler(this.btn_deleteonelist_Click);
             // 
             // btn_clearlist
             // 
@@ -295,6 +296,7 @@
             this.btn_clearlist.TabIndex = 9;
             this.btn_clearlist.Text = "清  空  列  表";
             this.btn_clearlist.UseVisualStyleBackColor = true;
+            this.btn_clearlist.Click += new System.EventHandler(this.btn_clearlist_Click);
             // 
             // btn_moveup
             // 
@@ -305,6 +307,7 @@
             this.btn_moveup.TabIndex = 8;
             this.btn_moveup.Text = "上          移";
             this.btn_moveup.UseVisualStyleBackColor = true;
+            this.btn_moveup.Click += new System.EventHandler(this.btn_moveup_Click);
             // 
             // btn_movedown
             // 
@@ -315,6 +318,7 @@
             this.btn_movedown.TabIndex = 7;
             this.btn_movedown.Text = "下          移";
             this.btn_movedown.UseVisualStyleBackColor = true;
+            this.btn_movedown.Click += new System.EventHandler(this.btn_movedown_Click);
             // 
             // btn_starttest_list
             // 
@@ -738,6 +742,7 @@
             this.btn_add_addsample.TabIndex = 10;
             this.btn_add_addsample.Text = "添          加";
             this.btn_add_addsample.UseVisualStyleBackColor = true;
+            this.btn_add_addsample.Click += new System.EventHandler(this.btn_add_addsample_Click);
             // 
             // btn_suspend_addsample
             // 
