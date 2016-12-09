@@ -48,6 +48,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>splitwj.ico</ApplicationIcon>
@@ -119,7 +120,9 @@
     <Compile Include="ApplicationProcedure\SystemCompound.Designer.cs">
       <DependentUpon>SystemCompound.cs</DependentUpon>
     </Compile>
+    <Compile Include="CAN.cs" />
     <Compile Include="GlobalVariables.cs" />
+    <Compile Include="HardwareControl.cs" />
     <Compile Include="NewAndOpenQuantitationAnalysisApplication\DriftRevision\AddDriftSample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +160,7 @@
     <Compile Include="ApplicationProcedure\PerformanceTest\CheckWDXRF.Designer.cs">
       <DependentUpon>CheckWDXRF.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuantApplication.cs" />
     <Compile Include="ResultDataAnalysis\QualitationAnalysisResults\CheckQualitationAnalysisPeak.cs">
       <SubType>Form</SubType>
     </Compile>

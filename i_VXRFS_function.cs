@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Configuration;
+using System.Data;
 
 namespace i_VXRFS
 {
@@ -954,4 +955,93 @@ namespace i_VXRFS
     //     }
     //}
 
+
+    //以下内容均是Austin完成
+    //读取数据的类
+    public class ReadData
+    {
+        //从txt文件中读取数据到DataTable中
+        public DataTable TxtToTable(string path)
+        {
+            DataTable table = new DataTable();
+            string[] strs = File.ReadAllLines(path);
+            string[] header = strs[0].Split('\t', ' ', '，');
+            for (int i = 0; i < header.Length; i++)
+            {
+                table.Columns.Add(header[i]);
+            }
+            for (int i = 0; i < strs.Length; i++)
+            {
+                string[] strs_line = strs[i].Split('\t', ' ', '，');
+                DataRow row = table.NewRow();
+                row.ItemArray = strs_line;
+                table.Rows.Add(row);
+            }
+            return table;
+        }
+        //把DataTable写入txt文件中
+        public void TableToTxt(string path, DataTable table)
+        {
+            FileStream stream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            List<string> headers = new List<string>();
+            for (int i=0;i<table.Columns.Count;i++)
+            {
+                headers.Add(table.Columns[i].ColumnName);
+            }
+            writer.WriteLine(string.Join("\t", headers));
+            for (int i=0;i<table.Rows.Count;i++)
+            {
+                string str = string.Join("\t", table.Rows[i].ItemArray);
+                writer.WriteLine(str);
+            }
+        }
+        //一旦绑定之后，DataGridView和DataTable中的数据是联动的，不需要相互转化
+        
+
+        //从txt文件中读取数据到List<String>中
+        public List<string> TxtToList(string path)
+        {
+            List<string> data = new List<string>();
+            string[] strs = File.ReadAllLines(path);
+            for (int i=0;i<strs.Length;i++)//数据必须要从第一行开始
+            {
+                string[] strs_line = strs[i].Split('\t', ' ', '，');
+                data.AddRange(strs_line);
+            }
+            return data;
+        }
+        //把List<T>数据写入txt文件,写入的存数据，没有标题
+        public void ListToTxt<T>(string path, List<T> list)
+        {
+            int rowcount = list.Count / 10;
+            FileStream stream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            for (int i=0;i<rowcount;i++)
+            {
+                string line = string.Join("\t", list.GetRange(i * 10, 10));
+                writer.WriteLine(line);
+            }
+            if (list.Count % 10 != 0)
+            {
+                string last_line = string.Join("\t", list.GetRange(rowcount * 10, list.Count - rowcount * 10));
+                writer.WriteLine(last_line);
+            }
+            
+        }
+        //把List<string>写入DataTable中
+        public void ListToTable<T>(ref DataTable table, List<T> list)
+        {
+            int columncount = table.Columns.Count;
+            int rowcount = list.Count / columncount;
+            for (int i=0;i<rowcount;i++)
+            {
+                table.Rows.Add(list.GetRange(i * columncount, columncount));
+            }
+            if (list.Count%columncount!=0)
+            {
+                table.Rows.Add(list.GetRange(rowcount * columncount, list.Count - rowcount * columncount));
+            }
+        }
+    }
 }
